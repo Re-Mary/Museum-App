@@ -3,17 +3,17 @@
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 -- ---------------------------------------------------------------------------
--- role
+-- app_role (PostgreSQL reserves keyword "role")
 -- ---------------------------------------------------------------------------
-CREATE TABLE role (
+CREATE TABLE app_role (
     id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name        VARCHAR(50)  NOT NULL,
     description TEXT,
     created_at  TIMESTAMPTZ  NOT NULL DEFAULT NOW(),
-    CONSTRAINT uq_role_name UNIQUE (name)
+    CONSTRAINT uq_app_role_name UNIQUE (name)
 );
 
-INSERT INTO role (name, description) VALUES
+INSERT INTO app_role (name, description) VALUES
     ('ADMIN',           'Full access, user management'),
     ('CURATOR',         'Objects, exhibitions, provenance, media'),
     ('CONSERVATOR',     'Condition reports, restoration'),

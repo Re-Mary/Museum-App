@@ -372,7 +372,7 @@ COMMENT ON TABLE object_document IS 'File attachments (MinIO URIs) linked polymo
 -- ---------------------------------------------------------------------------
 -- Role: RESEARCHER
 -- ---------------------------------------------------------------------------
-INSERT INTO role (name, description) VALUES
+INSERT INTO app_role (name, description) VALUES
     ('RESEARCHER', 'Research reports, scientific analysis documentation')
 ON CONFLICT (name) DO NOTHING;
 
